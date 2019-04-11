@@ -19,3 +19,15 @@ div {
     border-color: red;
     border-width: 1px;
 }
+
+.donate-image-rc {
+    height: 100px;
+    width: 300px;
+    margin: 3px;
+}
+
+.donate-image-sp {
+    height: 125px;
+    width:  300px;
+    margin: 3px;
+}

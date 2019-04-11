@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Disaster Dashboard</title>
+   
+  
   </head>
   <body>
 
@@ -18,19 +20,15 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        
-                                <ul class="navbar-nav">
-                                  <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">Features</a>
-                                  </li>
-                                  </ul>
+                  <!--Logo-->
+                  <a class="navbar-brand" href="#">
+                    <img src="https://dircargo.com/assets/logo-placeholder-2481c52480fb2b16529edb85f5ebace6a94979bdb6f0acdbea9fd9496f0c4b4e.png" width="30" height="30" alt="">
+                  </a>
+                                
                                   <!--Type of disaster dropdown menu-->
                                   <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Type
+                                     Disaster Type
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                       <button class="dropdown-item" type="button">Earthquake</button>
@@ -44,19 +42,19 @@
                                   <!--Country Dropdown Menu-->
                                   <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Type
+                                     Country
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                      <button class="dropdown-item" type="button">Earthquake</button>
-                                      <button class="dropdown-item" type="button">Volcano</button>
-                                      <button class="dropdown-item" type="button">Hurricane</button>
-                                      <button class="dropdown-item" type="button">Tornado</button>
-                                      <button class="dropdown-item" type="button">Tsunami</button>
+                                      <button class="dropdown-item" type="button">Japan</button>
+                                      <button class="dropdown-item" type="button">China</button>
+                                      <button class="dropdown-item" type="button">United States</button>
+                                      <button class="dropdown-item" type="button">India</button>
+                                      <button class="dropdown-item" type="button">Brazil</button>
                                     </div>
                                   </div>
                                   <!--search input-->
                                   <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2" id="search-param" type="search" placeholder="Search" aria-label="search">
+                                        <input class="form-control mr-sm-2" id="search-param" type="search" placeholder="Disaster or City Name" aria-label="search">
                                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                                       </form>
                                     </nav>
@@ -76,17 +74,36 @@
             </div>
             <!--sidebar-->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6" id="news-articles">
                     <h1>Trending News</h1>
+                    <div id="trending">
+                      
+                    </div>
                 </div>
 
-                <!--Slideshow area-->
-                <div class="col-md-8">
-                    <h1>Slideshow Area ( we will hide later)</h1>
-                    <!--Slideshow Images appear here-->
+                <!--Map area-->
+                <div class="col-md-6">
+                  <div class="row">
+                  <div class="col">
+                      <h1>Map</h1>
+                    <div id="map">
 
+                    </div>
+                  </div>
+                  </div>
 
+                <!--Videos Here-->
+                  <div class="row">
+                      <div class="col">
+                          <h1>YouTube</h1>
+                        <div id="youtube-video">
+    
+                        </div>
+                      </div>
+                      </div>
+                    
                 </div>
+
 
             </div>
 

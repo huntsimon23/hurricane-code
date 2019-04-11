@@ -1,0 +1,21 @@
+.nav-link {
+    margin: 3px;
+}
+
+.dropdown-toggle{
+    margin: 3px;
+}
+
+#search-param {
+    margin: 3px;
+}
+
+.btn-outline-success {
+    margin: 3px;
+}
+
+div {
+    border-style: dashed;
+    border-color: red;
+    border-width: 1px;
+}

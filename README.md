@@ -3,7 +3,7 @@ Project 1 for Vinnie Miller, Jose Velazquez, Terena Blasberg, and Simon Hunt
 
 Title: Disaster Dashboard
 
-Description: An app that allows family and loved ones to find timely, accurate, relevant information about natural disasters in the United States and their humanitarian impact.
+Description: An app that allows family and loved ones to find timely, accurate, relevant information about natural disasters and their humanitarian impact.
 
 STORY: 
 -	Jerome shoud be able to search by disaster name or geographic area to quickly find accurate information about an event his family has potentially been affected by.

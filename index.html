@@ -1,6 +1,108 @@
 <!doctype html>
 <html lang="en">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Disaster Dashboard</title>
+   
+  
+  </head>
+  <body>
+
+    <div class="container">
+
+      <!--Navbar-->
+      <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <!--Logo-->
+                <a class="navbar-brand" href="#">
+                  <img src="https://dircargo.com/assets/logo-placeholder-2481c52480fb2b16529edb85f5ebace6a94979bdb6f0acdbea9fd9496f0c4b4e.png" width="30" height="30" alt="">
+                  </a>
+                                
+    <!--Type of disaster dropdown menu-->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 disaster-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Disaster Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Earthquake</button>
+        <button class="dropdown-item" type="button">Volcano</button>
+        <button class="dropdown-item" type="button">Hurricane</button>
+        <button class="dropdown-item" type="button">Tornado</button>
+        <button class="dropdown-item" type="button">Tsunami</button>
+      </div>
+    </div>
+
+    <!--Country Dropdown Menu-->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Country
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Japan</button>
+        <button class="dropdown-item" type="button">China</button>
+        <button class="dropdown-item" type="button">United States</button>
+        <button class="dropdown-item" type="button">India</button>
+        <button class="dropdown-item" type="button">Brazil</button>
+      </div>
+    </div>
+    <!--search input-->
+    <form class="form-inline my-2">
+          <input class="form-control mr-sm-1" id="user-input" type="search" placeholder="Disaster or City Name" aria-label="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit">Search</button>
+        </form>
+      </nav>
+  </div>
+  </div>
+
+      <!--Main Content-->
+      <!--sidebar-->
+      <div class="row"  style="min-height: 50%;">
+          <div class="col-md-6 ">
+              <h1 class="my-4 text-center">Trending News</h1>
+              <div id="trending">
+              </div>
+          </div>
+
+          <!--Map area-->
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col">
+                <div id="map">
+
+                </div>
+              </div>
+            </div>
+
+          <!--Videos Here-->
+            <div class="row">
+                <div class="col">
+                    <h1>YouTube</h1>
+                  <div id="youtube">
+
+                  </div>
+                </div>
+                </div>
+              
+          </div>
+
+
+      </div>
+
+</div>
+
+<footer class="footer mt-auto">
+  <div class="container">
+  </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+=======
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -164,5 +266,4 @@
     crossorigin="anonymous"></script>
   <script src="./assets/js/app.js"></script>
 </body>
-
 </html>

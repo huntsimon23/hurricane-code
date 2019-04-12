@@ -41,9 +41,8 @@ $("#submit-button").on("click", function(event){
  
   console.log(userInput);
 
-  var queryURLYT = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFu";
 
-  https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=hurricanes&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY
+  var queryURLYT =  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY";
 
 
   console.log(queryURLYT);
@@ -58,6 +57,8 @@ $("#submit-button").on("click", function(event){
   .then(function(response) {
     for (var i =0; i < response.items.length; i++){
       console.log(response.items[i].id.videoId);
+
+      
     }
     
   })

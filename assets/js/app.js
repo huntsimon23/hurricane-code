@@ -1,8 +1,29 @@
-function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 16});
-    // The marker, positioned at Uluru
-}
+var reliefWebURL = "https://api.reliefweb.int/v1/reports?"
+
+$.ajax({
+    url: reliefWebURL,
+    method: "GET"
+}).then(function(response){
+    var articleData = response.data
+
+    var idCNTR = 0
+
+    articleData.forEach(element => {
+        var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + idCNTR)
+        var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + idCNTR)
+        var appArtTitle = $("<h5>").attr('class', 'card-title').text(element.fields.title)
+
+        
+        console.log(element.fields.title)
+        console.log(idCNTR)
+
+        $("#trending").append(appArtCard)
+        $("#appArtCard" + idCNTR).append(appArtBody)
+        $("#appArtBody" + idCNTR).append(appArtTitle)
+
+        idCNTR++
+
+
+    });
+
+})

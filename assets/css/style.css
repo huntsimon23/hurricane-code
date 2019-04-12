@@ -35,6 +35,52 @@ body{
     margin: 3px;
 }
 
+body {
+    background-color: darkgray;
+}
+
+.container {
+    background-color: white;
+}
+
+nav {
+    float: right;
+}
+
+#title-text {
+    color: #ffffff;
+    text-align: center;
+}
+
+#title-bkg {
+    background-color: #444444;
+    padding: 10px 0px 5px;
+}
+
+#trending-holder {
+    border-right: 2px dotted gray;
+}
+
+footer {
+    border-top: 5px solid #444444;
+}
+
+footer>.row>.col-4 {
+    padding: 10px;
+}
+
+#mapsample {
+    height: auto;
+    width: 100%;
+}
+
+#infographic {
+    position: absolute;
+    top: 15%;
+    height: 300px;
+    width: 500px;
+}
+
 #trending{
     max-height: 40%;
     overflow: scroll;

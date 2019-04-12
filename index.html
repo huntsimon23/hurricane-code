@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Disaster Dashboard</title>
    
@@ -16,129 +19,92 @@
 
     <div class="container">
 
-            <!--Navbar-->
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                  <!--Logo-->
-                  <a class="navbar-brand" href="#">
-                    <img src="https://dircargo.com/assets/logo-placeholder-2481c52480fb2b16529edb85f5ebace6a94979bdb6f0acdbea9fd9496f0c4b4e.png" width="30" height="30" alt="">
+      <!--Navbar-->
+      <div class="row">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <!--Logo-->
+                <a class="navbar-brand" href="#">
+                  <img src="https://dircargo.com/assets/logo-placeholder-2481c52480fb2b16529edb85f5ebace6a94979bdb6f0acdbea9fd9496f0c4b4e.png" width="30" height="30" alt="">
                   </a>
                                 
-                                  <!--Type of disaster dropdown menu-->
-                                  <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 disaster-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Disaster Type
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                      <button class="dropdown-item" type="button">Earthquake</button>
-                                      <button class="dropdown-item" type="button">Volcano</button>
-                                      <button class="dropdown-item" type="button">Hurricane</button>
-                                      <button class="dropdown-item" type="button">Tornado</button>
-                                      <button class="dropdown-item" type="button">Tsunami</button>
-                                    </div>
-                                  </div>
+    <!--Type of disaster dropdown menu-->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 disaster-type" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Disaster Type
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Earthquake</button>
+        <button class="dropdown-item" type="button">Volcano</button>
+        <button class="dropdown-item" type="button">Hurricane</button>
+        <button class="dropdown-item" type="button">Tornado</button>
+        <button class="dropdown-item" type="button">Tsunami</button>
+      </div>
+    </div>
 
-                                  <!--Country Dropdown Menu-->
-                                  <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Country
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                      <button class="dropdown-item" type="button">Japan</button>
-                                      <button class="dropdown-item" type="button">China</button>
-                                      <button class="dropdown-item" type="button">United States</button>
-                                      <button class="dropdown-item" type="button">India</button>
-                                      <button class="dropdown-item" type="button">Brazil</button>
-                                    </div>
-                                  </div>
-                                  <!--search input-->
-                                  <form class="form-inline my-2 my-lg-0">
-                                        <input class="form-control mr-sm-2" id="user-input" type="search" placeholder="Disaster or City Name" aria-label="search">
-                                        <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit">Search</button>
-                                      </form>
-                                    </nav>
-                                </div>
-                                </div>
+    <!--Country Dropdown Menu-->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2 country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Country
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <button class="dropdown-item" type="button">Japan</button>
+        <button class="dropdown-item" type="button">China</button>
+        <button class="dropdown-item" type="button">United States</button>
+        <button class="dropdown-item" type="button">India</button>
+        <button class="dropdown-item" type="button">Brazil</button>
+      </div>
+    </div>
+    <!--search input-->
+    <form class="form-inline my-2">
+          <input class="form-control mr-sm-1" id="user-input" type="search" placeholder="Disaster or City Name" aria-label="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="submit-button" type="submit">Search</button>
+        </form>
+      </nav>
+  </div>
+  </div>
 
-            <!--Main Content-->
-        <div class="row">
-            <div class="col">
-                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                    <!-- Navbar content -->
-                    <h2>Disaster Dashboard</h2>
-                   </nav>
-                </div>
-            </div>
-            <!--sidebar-->
+      <!--Main Content-->
+      <!--sidebar-->
+      <div class="row">
+          <div class="col-md-6">
+              <h1>Trending News</h1>
+              <div id="trending">
+              </div>
+          </div>
+
+          <!--Map area-->
+          <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6">
-                    <h1>Trending News</h1>
-                    <div id="trending">
+              <div class="col">
+                <div id="map">
 
-                    </div>
                 </div>
-
-                <!--Map area-->
-                <div class="col-md-6">
-                  <div class="row">
-                  <div class="col">
-                      <h1>Map</h1>
-                    <div id="map">
-
-                    </div>
-                  </div>
-                  </div>
-
-                <!--Videos Here-->
-                  <div class="row">
-                      <div class="col">
-                          <h1>YouTube</h1>
-                        <div id="youtube">
-    
-                        </div>
-                      </div>
-                      </div>
-                    
-                </div>
-
-
+              </div>
             </div>
 
-
-
-        <!--footer-->
-        <footer>
+          <!--Videos Here-->
             <div class="row">
-                <div class="col-md-4">
-                  <p>
-                    To get involved in these organizations and aid in the relief efforts, hover over their logos.  This will give you more information.
-                  </p>
-                    
-                </div>
+                <div class="col">
+                    <h1>YouTube</h1>
+                  <div id="youtube">
 
-                <div class="col-md-4">
-                  <a href="https://www.redcross.org/donate/donation.html/"><img class="donate-image-rc" src="assets/images/redcross-logo.png"></a>
-                  <p>The American Red Cross responds to an emergency every 8 minutes.  From small house fires to multi-state natural disasters, the American Red Cross goes wherever we’re needed, so people can have clean water, safe shelter and hot meals when they need them most.</p>
-                  
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="https://www.samaritanspurse.org/"><img class="donate-image-sp" src="assets/images/samaritans-purse2.jpg"></a>
-                    <p>
-                        Samaritan's Purse stands ready to respond at a moment’s notice whenever and wherever disaster strikes. They specialize in meeting critical needs for victims of conflict, disaster, famine, and epidemics throughout the world, providing food, water, shelter, medicine, and other assistance in the Name of Jesus Christ.
-                    </p>
-
                 </div>
+              
+          </div>
 
-            </div>
-        </footer>
+
+      </div>
 
 </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGyF_85l6rWK-qNeuIukCCREEHSf5EuxY&callback=initMap">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>

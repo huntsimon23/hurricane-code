@@ -14,11 +14,11 @@
     margin: 3px;
 }
 
-div {
+/* div {
     border-style: dashed;
     border-color: red;
     border-width: 1px;
-}
+} */
 
 .donate-image-rc {
     height: 100px;
@@ -31,3 +31,17 @@ div {
     width:  300px;
     margin: 3px;
 }
+
+#trending{
+    height: 40%;
+    overflow: scroll;
+}
+
+.news{
+    height: 40%
+}
+
+#map {
+    height: 300px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }

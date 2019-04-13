@@ -93,7 +93,8 @@ $("#submit-button").on("click", function(event){
       console.log(youtube);
 
       var iframe = $("<iframe>");
-      iframe.attr("src", youtube); 
+      iframe.attr("src", youtube);
+      $("#youtube").empty(); 
       $("#youtube").html(iframe);
 
         }}

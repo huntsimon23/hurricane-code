@@ -18,22 +18,24 @@
     margin: 3px;
 }
 
-div {
+/* div {
     border-style: dashed;
     border-color: red;
     border-width: 1px;
-}
+} */
 
 .donate-image-rc {
     height: 100px;
     width: 100%;
     margin: 3px;
+    padding: 15px;
 }
 
 .donate-image-sp {
     height: 125px;
     width:  100%;
     margin: 3px;
+    padding: 15px;
 }
 
 body {
@@ -75,15 +77,16 @@ footer>.row>.col-4 {
     width: 100%;
 }
 
-#infographic {
-    position: absolute;
+#youtube {
+    float: center;
+    /* position: absolute;
     top: 15%;
     height: 300px;
-    width: 500px;
+    width: 500px; */
 }
 
 #trending{
-    height: 400px;
+    height: 350px;
     /* max-height: 40%; */
     overflow: scroll;
 }
@@ -94,7 +97,7 @@ footer>.row>.col-4 {
 }
 
 #map {
-    height: 300px;  /* The height is 400 pixels */
+    height: auto;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
     overflow: scroll;
    }
@@ -102,4 +105,14 @@ footer>.row>.col-4 {
 .title-subtext {
     text-align: center;
     color: #DC3545;
+}
+
+#infographic {
+    width: 100%;
+    float: center;
+}
+
+#getinvolved {
+    text-align: center;
+    float: center;
 }

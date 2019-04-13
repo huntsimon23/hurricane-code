@@ -64,8 +64,8 @@ $(".disaster-dropdown, .country-dropdown").on("click", function(event){
 $("#submit-button").on("click", function(event){
   event.preventDefault();
   userInput = $("#user-input").val().trim();
-  userInput = userInput.replace(" ", "+");
-  dropdown = dropdown.join("+");
+  // userInput = userInput.replace(" ", "+");
+  // dropdown = dropdown.join("+");
 
   console.log("Dropdown  "+ dropdown);
   console.log(userInput);

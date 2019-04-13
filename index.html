@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
   <title>Disaster Dashboard</title>
 </head>
 
@@ -20,7 +21,7 @@
       <div class="col">
         <!--Logo-->
         <a class="navbar-brand" href="#">
-          <img src="./assets/images/ddlogo1.jpg">
+          <img src="./assets/images/ddlogo2.jpg">
         </a>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <!--Type of disaster dropdown menu-->
@@ -65,13 +66,13 @@
     <div class="row">
       <div class="col" id="title-bkg">
         <h2 id="title-text"><strong>Disaster Dashboard</strong></h2>
-        <p class="title-subtext"><strong>Up to date, accurate information about disasters worldwide and their humanitarian impact</strong></p>
+        <h4 class="title-subtext"><strong>Up to date, accurate information about disasters worldwide and their humanitarian impact</strong></h4>
       </div>
     </div>  
     <!--sidebar-->
     <div class="row flex">
       <div class="col-6" id="trending-holder">
-        <h1>Trending News</h1>
+        <h2 id="trending-text">Trending News</h2>
         <div id="trending">
 
         </div>
@@ -105,19 +106,20 @@
       </div>   
     </div> 
     
+    <hr>
     
-      
-      <div class="row">
+      <!-- donate row -->
+      <div class="row" id="donate">
         <div class="col-4">
           <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-interval="10000">
+              <div class="carousel-item active" data-interval="7000">
                 <img src="./assets/images/carousel-3.JPG" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item" data-interval="2000">
+              <div class="carousel-item" data-interval="7000">
                 <img src="./assets/images/carousel-1.jpg" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-interval="7000">
                 <img src="./assets/images/carougel-2.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
@@ -133,8 +135,8 @@
         </div>
 
       <div class="col-8">
-          <div class="row">
-            <h3 id="getinvolved">Get Involved</h3>
+          <div class="row" id="donate-bkg">
+            <h2 id="getinvolved" class="text-center">Get Involved</h2>
           </div>
 
       <div class="row">
@@ -147,16 +149,17 @@
 
         <div class="col-6">
           <a href="https://www.samaritanspurse.org/"><img class="donate-image-sp"
-              src="assets/images/samaritans-purse2.jpg" data-toggle="tooltip" data-placement="top"
+              src="assets/images/samaritans-purse3.jpg" data-toggle="tooltip" data-placement="top"
               title="They specialize in meeting critical needs for victims of conflict, disaster, famine, and epidemics throughout the world, providing food, water, shelter, medicine, and other assistance in the Name of Jesus Christ."></a>
-          <p>Samaritan's Purse stands ready to respond at a moment’s notice whenever and wherever disaster strikes.</p>
+          <p>Samaritan's Purse stands ready to respond at a moment’s notice wherever disaster strikes.</p>
         </div>
       </div>    
       </div>
     </div>
-    
+    <hr>
       <!--footer-->
     <footer>
+      <p id="footer-text">&copy; 2019 Disaster Dashboard, LLC | About Us</p>
     </footer>
   </div>
   

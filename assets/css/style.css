@@ -1,6 +1,7 @@
-body{
+/* body{
     overflow: hidden;
-}
+} */
+
 .nav-link {
     margin: 3px;
 }
@@ -17,21 +18,21 @@ body{
     margin: 3px;
 }
 
-/* div {
+div {
     border-style: dashed;
     border-color: red;
     border-width: 1px;
-} */
+}
 
 .donate-image-rc {
     height: 100px;
-    width: 300px;
+    width: 100%;
     margin: 3px;
 }
 
 .donate-image-sp {
     height: 125px;
-    width:  300px;
+    width:  100%;
     margin: 3px;
 }
 
@@ -82,15 +83,23 @@ footer>.row>.col-4 {
 }
 
 #trending{
-    max-height: 40%;
+    height: 400px;
+    /* max-height: 40%; */
     overflow: scroll;
 }
 
 .news{
-    height: 40%
+    height: 40%;
+    overflow: scroll;
 }
 
 #map {
     height: 300px;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
+    overflow: scroll;
    }
+
+.title-subtext {
+    text-align: center;
+    color: #DC3545;
+}

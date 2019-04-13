@@ -27,7 +27,6 @@ Workflow:
 
 Other parameters: IDEAS and TOOLS USED to be used freely as common notepads for relevant shared data.
 
-
 Timelines
 By Thursday Night 4/10:
 HTML Bootstrap layout, with DIVs styled to recieve API content

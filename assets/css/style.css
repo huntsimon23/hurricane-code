@@ -139,3 +139,8 @@ nav {
     text-align: center;
     padding: 10px;
 }
+
+.cardimage{
+    height: 50px;
+    width: 50px
+}

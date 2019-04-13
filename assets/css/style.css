@@ -1,6 +1,7 @@
-body{
+/* body{
     overflow: hidden;
-}
+} */
+
 .nav-link {
     margin: 3px;
 }
@@ -24,23 +25,26 @@ body{
 } */
 
 .donate-image-rc {
-    height: 100px;
-    width: 300px;
+    height: auto;
+    /* width: 100%; */
     margin: 3px;
+    padding: 15px;
 }
 
 .donate-image-sp {
-    height: 125px;
-    width:  300px;
+    height: 100px;
+    width:  241px;
     margin: 3px;
+    padding: 15px;
 }
 
 body {
-    background-color: darkgray;
+    background-color:#c5c5c5;
 }
 
 .container {
     background-color: white;
+    font-family: 'Asap', sans-serif;
 }
 
 nav {
@@ -50,6 +54,7 @@ nav {
 #title-text {
     color: #ffffff;
     text-align: center;
+    text-shadow: 2px 2px black;
 }
 
 #title-bkg {
@@ -57,40 +62,80 @@ nav {
     padding: 10px 0px 5px;
 }
 
-#trending-holder {
-    border-right: 2px dotted gray;
-}
+/* #trending-holder {
+    /* border-right: 2px dotted gray; 
+} */ 
 
-footer {
+/* footer {
     border-top: 5px solid #444444;
-}
+} */
 
-footer>.row>.col-4 {
+/* footer>.row>.col-4 {
     padding: 10px;
-}
+} */
 
 #mapsample {
     height: auto;
     width: 100%;
 }
 
-#infographic {
-    position: absolute;
+#youtube {
+    float: center;
+    /* position: absolute;
     top: 15%;
     height: 300px;
-    width: 500px;
+    width: 500px; */
 }
 
 #trending{
-    max-height: 40%;
+    height: 350px;
+    /* max-height: 40%; */
     overflow: scroll;
 }
 
 .news{
-    height: 40%
+    height: 40%;
+    overflow: scroll;
 }
 
 #map {
-    height: 300px;  /* The height is 400 pixels */
+    height: auto;  /* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
+    padding: 15px;
+    overflow: scroll;
    }
+
+.title-subtext {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px black;
+}
+
+#infographic {
+    width: 100%;
+    height: 200px;
+    float: center;
+    padding: 15px;
+}
+
+#getinvolved {
+    text-align: center;
+    margin-left:calc(100% - 60%);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px black;
+    padding: 3px;
+}
+
+#trending-text {
+    text-align: center;
+    margin: 5px;
+}
+
+#donate-bkg {
+    background-color: #444444;
+}
+
+#footer-text {
+    text-align: center;
+    padding: 10px;
+}

@@ -88,14 +88,16 @@ $("#submit-button").on("click", function(event){
       console.log(response.items[i].id.videoId);
 
       var youtube = "https://www.youtube.com/embed/" 
-      + response.items[i].id.videoId;
+      + response.items[i].id.videoId + "?loop=1";
 
       console.log(youtube);
+      
 
-      var iframe = $("<iframe>");
+      var iframe = $("<iframe width='560' height='315' src= youtube  frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+
       iframe.attr("src", youtube);
-      $("#youtube").empty(); 
-      $("#youtube").html(iframe);
+      $("#player").empty(); 
+      $("#player").html(iframe);
 
         }}
               
@@ -103,6 +105,9 @@ $("#submit-button").on("click", function(event){
   )
 })
   
+// Youtube Div - Iframe resizing (responsive) - DONE,
+//  5 videos in sequence,
+//  advanced search filtering 
 
 
 

@@ -84,22 +84,65 @@ $("#submit-button").on("click", function(event){
   })
   
   .then(function(response) {
-    for (var i =0; i < response.items.length; i++){
-      console.log(response.items[i].id.videoId);
+    console.log("hi");
+    // for (var i =0; i < response.items.length; i++){
+      // console.log(response.items[i].id.videoId);
 
-      var youtube = "https://www.youtube.com/embed/" 
-      + response.items[i].id.videoId + "?loop=1";
+      var player;
 
-      console.log(youtube);
+      function onYouTubeIframeAPIReady() {
+          player = new YT.Player('#video-placeholder', {
+              width: 600,
+              height: 400,
+              videoId: "vm4xx6P56H4",
+              playerVars: {
+                  color: 'white',
+                  playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+              },
+              events: {
+                  onReady: initialize
+              }
+          });
+      }
       
 
-      var iframe = $("<iframe width='560' height='315' src= youtube  frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
 
-      iframe.attr("src", youtube);
-      $("#player").empty(); 
-      $("#player").html(iframe);
+      function initialize(){
 
-        }}
+        // Update the controls on load
+        updateTimerDisplay();
+        updateProgressBar();
+    
+        // Clear any old interval.
+        clearInterval(time_update_interval);
+    
+        // Start interval to update elapsed time display and
+        // the elapsed part of the progress bar every second.
+        time_update_interval = setInterval(function () {
+            updateTimerDisplay();
+            updateProgressBar();
+        }, 1000)
+    
+    }
+
+
+
+
+
+      // var youtube = "https://www.youtube.com/embed/" 
+      // + response.items[i].id.videoId + "?loop=1";
+
+      // console.log(youtube);
+      
+
+      // var iframe = $("<iframe width='560' height='315' src= youtube  frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
+
+      // iframe.attr("src", youtube);
+      // $("#player").empty(); 
+      // $("#player").html(iframe);
+
+        // }
+      }
               
             
   )

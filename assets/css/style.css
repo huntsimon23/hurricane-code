@@ -144,3 +144,12 @@ nav {
     height: 50px;
     width: 50px
 }
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#about-title {
+    background-color: black;
+}

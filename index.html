@@ -9,8 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Atu6_COX5E94wLFqO9FiQbCtWY8GSJthzKLWIq4JKuMz53WWLWrmMVyjYJeeoagN' async defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
   <title>Disaster Dashboard</title>
 </head>
 
@@ -22,8 +23,9 @@
       <div class="col">
         <!--Logo-->
         <a class="navbar-brand" href="#">
-          <img src="./assets/images/ddlogo2.jpg">
+          <img src="./assets/images/ddlogo.png">
         </a>
+          <img src="./assets/images/on.png" id="onOffSwitch">
         <!-- modal for user login -->
         <!-- Button trigger modal -->
         <button type="button" class="btn loginbutton" data-toggle="modal" data-target="#loginModal">
@@ -66,7 +68,6 @@
             </div>
             </div>
           </div>
-        </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <!--Type of disaster dropdown menu-->
           <div class="dropdown">
@@ -114,7 +115,7 @@
       </div>
     </div>
     <!--sidebar-->
-    <div class="row flex">
+    <div class="row flex" id="content-row">
       <div class="col-6" id="trending-holder">
       <div class="row">
           <div class="col-3"><button type="button" class="btn btn-link" id="stories">My Stories</button></div>
@@ -127,11 +128,9 @@
       <!--Map area-->
       <div class="col-6">
         <div class="row">
-          <div class="col">
+          <div class="col " id="mapArea">
             <!-- <h1>Map</h1> -->
-            <div id="map">
-              <!-- take this out later -->
-              <img src="./assets/images/mapsample.png" id="mapsample">
+            <div class="mr-3 mt-3"id="map">
             </div>
           </div>
         </div>
@@ -145,8 +144,6 @@
               <div id="video-placeholder"></div>
 
               <script src="https://www.youtube.com/iframe_api"></script>
-              <img src="./assets/images/infographic1.jpg" id="infographic">
-
             <div id="youtube">
               <img src="./assets/images/DDupdatedinfographic.JPG" id="infographic">
 

@@ -162,3 +162,8 @@ h1 {
 #about-title {
     background-color: black;
 }
+
+.card-img {
+    height: 100px;
+    width: 100px;
+}

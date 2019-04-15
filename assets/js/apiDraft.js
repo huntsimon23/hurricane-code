@@ -28,6 +28,7 @@ var queryURLYT;
 var userInput;
 var dropdown = [];
 var dropdownVal;
+var ytResults = [];
 
 
 //whenever I play the youtube video is saying video unavailable
@@ -63,6 +64,7 @@ $(".disaster-dropdown, .country-dropdown").on("click", function(event){
 //capture value from search field to dynamically add to queryurl - DONE
 $("#submit-button").on("click", function(event){
   event.preventDefault();
+  $("#infographic").hide();
   userInput = $("#user-input").val().trim();
   // userInput = userInput.replace(" ", "+");
   // dropdown = dropdown.join("+");
@@ -85,63 +87,58 @@ $("#submit-button").on("click", function(event){
   
   .then(function(response) {
     console.log("hi");
-    // for (var i =0; i < response.items.length; i++){
-      // console.log(response.items[i].id.videoId);
 
-      var player;
+    // add responses to an array
 
-      function onYouTubeIframeAPIReady() {
-          player = new YT.Player('#video-placeholder', {
-              width: 600,
-              height: 400,
-              videoId: "vm4xx6P56H4",
-              playerVars: {
-                  color: 'white',
-                  playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-              },
-              events: {
-                  onReady: initialize
-              }
-          });
-      }
+    for (var i =0; i < response.items.length; i++){
+      console.log(response.items[i].id.videoId);
+
+      // ytResults.push(response.items[i].id.videoId);
+      // console.log("yt Results "+ ytResults);
+
+
+
+      // ---------------------------------------------------------------------------
+
+      // CALL IFRAME API - Can't get to reload videos after a second search
+      // var player;
+
+      // function onYouTubeIframeAPIReady() {
+      //     player = new YT.Player('video-placeholder', {
+      //         width: 600,
+      //         height: 400,
+      //         videoId: response.items[i].id.videoId,
+      //         playerVars: {
+      //             color: 'white',
+      //             // listType:'search',
+      //           },
+              
+      //     });
+      // }
+      
+      // onYouTubeIframeAPIReady();
+
+      // ---------------------------------------------------------------------------
+
+
+
+
+
+    // ANOTHER WAY TO DISPLAY YOUTUBE VIDEOS
+
+      var youtube = "https://www.youtube.com/embed/" 
+      + response.items[i].id.videoId + "?loop=1";
+
+      console.log(youtube);
       
 
+      var iframe = $("<iframe width='560' height='315' src= youtube  frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
 
-      function initialize(){
+      iframe.attr("src", youtube);
+      $("#player").empty(); 
+      $("#player").html(iframe);
 
-        // Update the controls on load
-        updateTimerDisplay();
-        updateProgressBar();
-    
-        // Clear any old interval.
-        clearInterval(time_update_interval);
-    
-        // Start interval to update elapsed time display and
-        // the elapsed part of the progress bar every second.
-        time_update_interval = setInterval(function () {
-            updateTimerDisplay();
-            updateProgressBar();
-        }, 1000)
-    
-    }
-
-
-
-
-
-      // var youtube = "https://www.youtube.com/embed/" 
-      // + response.items[i].id.videoId + "?loop=1";
-
-      // console.log(youtube);
-      
-
-      // var iframe = $("<iframe width='560' height='315' src= youtube  frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
-
-      // iframe.attr("src", youtube);
-      // $("#player").empty(); 
-      // $("#player").html(iframe);
-
-        // }
+        }
       }
               
             

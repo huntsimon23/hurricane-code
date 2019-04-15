@@ -82,10 +82,6 @@ nav {
     padding: 10px;
 } */
 
-#mapsample {
-    height: auto;
-    width: 100%;
-}
 
 #youtube {
     float: center;
@@ -159,10 +155,10 @@ nav {
 
 /* Responsive youtube player  */
 
-h1 {
+/* h1 {
     text-align: center;
     color: white;
-}
+} */
 
 #about-title {
     background-color: black;

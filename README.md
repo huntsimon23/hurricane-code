@@ -48,3 +48,22 @@ key points of creating an MVP:
 3. Identify the problem that the product will address.
 4. Write down the primary goal of the product.
 5. Identify and prioritize essential user stories.
+
+For Monday:
+Trending Div - Styling (Jose), Row height issue (Simon),display seach results, display favorites when logged in.
+
+Map Div - Rough Draft of basic functionality (Jose)
+
+Youtube Div - Iframe resizing, 5 videos in sequence, search filtering (Tess)
+
+Firebase Research - propose pseusdocode for how to utilize firebase authentication (all)
+
+Button & Modals for login authentication and profile settings (Vinnie)
+
+Button Toggle for saved items/trending items (Simon)
+
+Search button functionality updates (Tess)
+
+Stretch Goals:
+Populate Dropdowns with data from ReleifWeb API
+Auto Complete in search box

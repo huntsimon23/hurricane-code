@@ -96,6 +96,17 @@ nav {
     /* max-height: 40%; */
     overflow: scroll;
     border: whitesmoke solid 1px;
+    
+}
+
+#articleLink {
+    text-decoration: none;
+    font-size: 18px;
+    }
+
+#articleLink:hover {
+    text-decoration: none;
+    color: blue;
 }
 
 .news{

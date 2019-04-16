@@ -73,7 +73,7 @@ $("#submit-button").on("click", function(event){
   console.log(userInput);
 
 
-  var queryURLYT =  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "+" + dropdown + "&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY";
+  var queryURLYT =  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "+" + dropdown + "weather+channel+bbc-music-entertainment&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY";
 
 
   console.log(queryURLYT);

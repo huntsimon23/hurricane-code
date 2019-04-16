@@ -1,7 +1,5 @@
 //This is where the firebase code goes
 
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-<script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCZShavrqBv1mczIBpUkG5Yj0oNeyulzec",
@@ -12,4 +10,51 @@
     messagingSenderId: "1021340464037"
   };
   firebase.initializeApp(config);
-</script>
+
+  // Create a variable to reference the database
+  var database = firebase.database();
+
+    // Initial Variables (SET the first set IN FIREBASE FIRST)
+    // Note remember to create these same variables in Firebase!
+    var email = "";
+    var password = "";
+    var emailVerified = "";
+
+// Click submit changes what is stored in firebase
+$("#modal-submit-btn").on("click", function(){
+    // Prevent the page from refreshing
+    // Capture the value from the id's
+
+    # input-email
+    # input-password
+    # input-password-verify
+
+    // Change what is saved in firebase
+    database.ref().set({
+
+
+    })
+
+    // Clear localStorage
+    localStorage.clear();
+
+    // Store email, password and verified password content into localStorage
+
+
+    // 
+
+
+});
+
+
+
+
+    // When changes occurs, print the email on the html designated div (TBD) 
+    database.ref().on("value", function (snapshot) {
+
+
+    })
+
+
+    // Run on click function - to save articles as favorite 
+

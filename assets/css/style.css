@@ -18,14 +18,14 @@
     margin: 3px;
 }
 
-/* login button */
-.loginbutton {
-    border: 1px;
+/* login button 
+#loginbutton {
+    border: 3px;
     
     border-color: red;
     
 }
-
+*/
 
 /* div {
     border-style: dashed;

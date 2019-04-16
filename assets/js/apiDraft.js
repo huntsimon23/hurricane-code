@@ -20,8 +20,9 @@
 $(document).ready(function(){
 
 
-var disasters = ["Earthquake", "Volcano", "Hurricane", "Tornado", "Tsunami"];
-var countries = ["Japan", "China", "United States", "India", "Brazil"];
+var disasters = ["Earthquake", "Volcano", "Hurricane", "Tornado", "Tsunami", "Drought", "Landslide", "Debris Flow", "Fire", "Flood"];
+
+var countries = ["Japan", "China", "United States", "India", "Brazil", "Afganistan", "Egypt", "Haiti", "Mozambique", "Indonesia"];
 var queryURLGM;
 var queryURLRW;
 var queryURLYT;
@@ -73,7 +74,7 @@ $("#submit-button").on("click", function(event){
   console.log(userInput);
 
 
-  var queryURLYT =  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "+" + dropdown + "&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY";
+  var queryURLYT =  "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" + userInput + "+" + dropdown + "weather+channel+bbc-music-entertainment&type=video&key=AIzaSyASR2Vax41X1XTlSVT0zZjd0LgP6L-kFuY";
 
 
   console.log(queryURLYT);
@@ -143,11 +144,58 @@ $("#submit-button").on("click", function(event){
               
             
   )
+
+  // <----------------TRENDING-CODE---------------->
+
+var NYTimesURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO&q=" + userInput + "+" + dropdown 
+
+
+
+$.ajax({
+  url: NYTimesURL,
+  method: "GET"
+}).then(function(response){
+
+  console.log(response)
+  
+  var articleData = response.response.docs
+  var windowHeight = $(window).height()
+  var footerHeight = $("#donate").height()
+  var trendingHeight = windowHeight - footerHeight
+
+  $("#trending").empty()
+
+  $("#trending").css('height', trendingHeight)
+
+  for(i = 0; i < 10; i++){
+      // console.log(articleData[i])
+
+      var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
+      var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
+      var appCardPic = $("<ion-icon>").attr('name', 'save').attr('id', 'appCardPic' + i)
+      var appArtTitle = $("<a>").attr('href', articleData[i].web_url).attr('id', 'articleLink').attr('class', 'card-title mt-2').text(articleData[i].snippet)
+
+      // console.log(articleData[i])
+
+      $("#trending").append(appArtCard)
+      $("#appArtCard" + i).append(appArtBody)
+      // $("#appArtBody" + i).append(appCardPic)
+      $("#appArtBody" + i).append($("<hr>"))
+      $("#appArtBody" + i).append(appArtTitle)
+
+
+  }
+
+})
+
 })
   
 // Youtube Div - Iframe resizing (responsive) - DONE,
 //  5 videos in sequence,
 //  advanced search filtering 
+
+
+
 
 
 

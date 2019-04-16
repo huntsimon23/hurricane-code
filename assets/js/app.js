@@ -1,4 +1,5 @@
 var NYTimesURL = "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO"
+var trendingURL =  "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO"
 var reliefWebURL = "https://api.reliefweb.int/v1/countries"
 var onOff = 1
 var crisisCountries = []
@@ -66,6 +67,7 @@ $.ajax({
 
 $(function(){
 
+    NYTimesURL = trendingURL
     var mapHeight = $("#mapArea").height()
     var mapWidth = $("#mapArea").width()
 
@@ -88,6 +90,7 @@ function GetMap()
 
 }
 
+
 $.ajax({
     url: reliefWebURL,
     method: "GET"
@@ -97,7 +100,6 @@ $.ajax({
 
     for(i = 0; i < 11; i++){
         crisisCountries.push(countryData[i].fields.name)
-        console.log(crisisCountries)
     }
 
 })

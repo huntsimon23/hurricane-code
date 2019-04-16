@@ -143,11 +143,58 @@ $("#submit-button").on("click", function(event){
               
             
   )
+
+  // <----------------TRENDING-CODE---------------->
+
+var NYTimesURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO&q=" + userInput + "+" + dropdown 
+
+
+
+$.ajax({
+  url: NYTimesURL,
+  method: "GET"
+}).then(function(response){
+
+  console.log(response)
+  
+  var articleData = response.response.docs
+  var windowHeight = $(window).height()
+  var footerHeight = $("#donate").height()
+  var trendingHeight = windowHeight - footerHeight
+
+  $("#trending").empty()
+
+  $("#trending").css('height', trendingHeight)
+
+  for(i = 0; i < 10; i++){
+      // console.log(articleData[i])
+
+      var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
+      var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
+      var appCardPic = $("<ion-icon>").attr('name', 'save').attr('id', 'appCardPic' + i)
+      var appArtTitle = $("<a>").attr('href', articleData[i].web_url).attr('id', 'articleLink').attr('class', 'card-title mt-2').text(articleData[i].snippet)
+
+      // console.log(articleData[i])
+
+      $("#trending").append(appArtCard)
+      $("#appArtCard" + i).append(appArtBody)
+      // $("#appArtBody" + i).append(appCardPic)
+      $("#appArtBody" + i).append($("<hr>"))
+      $("#appArtBody" + i).append(appArtTitle)
+
+
+  }
+
+})
+
 })
   
 // Youtube Div - Iframe resizing (responsive) - DONE,
 //  5 videos in sequence,
 //  advanced search filtering 
+
+
+
 
 
 

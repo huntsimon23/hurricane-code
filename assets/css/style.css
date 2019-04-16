@@ -18,14 +18,14 @@
     margin: 3px;
 }
 
-/* login button */
-.loginbutton {
-    border: 1px;
+/* login button 
+#loginbutton {
+    border: 3px;
     
     border-color: red;
     
 }
-
+*/
 
 /* div {
     border-style: dashed;
@@ -95,6 +95,7 @@ nav {
     /* height: 350px; */
     /* max-height: 40%; */
     overflow: scroll;
+    border: whitesmoke solid 1px;
 }
 
 .news{
@@ -164,6 +165,10 @@ nav {
     background-color: black;
 }
 
+.card-img {
+    height: 200px;
+    width: 150px;
+}
 .iframe-container{
     position: relative;
     width: 100%;

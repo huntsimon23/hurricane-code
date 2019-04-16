@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
   <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Atu6_COX5E94wLFqO9FiQbCtWY8GSJthzKLWIq4JKuMz53WWLWrmMVyjYJeeoagN' async defer></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
@@ -35,7 +34,7 @@
           <img src="./assets/images/on.png" id="onOffSwitch">
         <!-- modal for user login -->
         <!-- Button trigger modal -->
-        <button type="button" class="btn loginbutton" data-toggle="modal" data-target="#loginModal">
+        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="loginbutton" data-toggle="modal" data-target="#loginModal">
           Login
         </button>
 
@@ -87,6 +86,10 @@
               <button class="dropdown-item disaster-dropdown" type="button">Hurricane</button>
               <button class="dropdown-item disaster-dropdown" type="button">Tornado</button>
               <button class="dropdown-item disaster-dropdown" type="button">Tsunami</button>
+              <button class="dropdown-item disaster-dropdown" type="button">Drought</button>
+              <button class="dropdown-item disaster-dropdown" type="button">Landslide</button>
+              <button class="dropdown-item disaster-dropdown" type="button">Wildfire</button>
+              <button class="dropdown-item disaster-dropdown" type="button">Flood</button>
             </div>
           </div>
 
@@ -101,6 +104,11 @@
               <button class="dropdown-item country-dropdown" type="button">United States</button>
               <button class="dropdown-item country-dropdown" type="button">India</button>
               <button class="dropdown-item country-dropdown" type="button">Brazil</button>
+              <button class="dropdown-item country-dropdown" type="button">Afganistan</button>
+              <button class="dropdown-item country-dropdown" type="button">Egypt</button>
+              <button class="dropdown-item country-dropdown" type="button">Haiti</button>
+              <button class="dropdown-item country-dropdown" type="button">Mozambique</button>
+              <button class="dropdown-item country-dropdown" type="button">Indonesia</button>
             </div>
           </div>
           <!--search input-->

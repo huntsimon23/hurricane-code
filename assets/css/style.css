@@ -95,6 +95,7 @@ nav {
     /* height: 350px; */
     /* max-height: 40%; */
     overflow: scroll;
+    border: whitesmoke solid 1px;
 }
 
 .news{

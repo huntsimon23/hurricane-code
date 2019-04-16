@@ -18,14 +18,14 @@
     margin: 3px;
 }
 
-/* login button */
-.loginbutton {
-    border: 1px;
+/* login button 
+#loginbutton {
+    border: 3px;
     
     border-color: red;
     
 }
-
+*/
 
 /* div {
     border-style: dashed;
@@ -164,6 +164,10 @@ nav {
     background-color: black;
 }
 
+.card-img {
+    height: 200px;
+    width: 150px;
+}
 .iframe-container{
     position: relative;
     width: 100%;

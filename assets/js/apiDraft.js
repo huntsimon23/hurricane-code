@@ -20,7 +20,7 @@
 $(document).ready(function(){
 
 
-var disasters = ["Earthquake", "Volcano", "Hurricane", "Tornado", "Tsunami", "Fire", "Drought", "Landslides", "Debris Flow", "Wildfires", "Floods"];
+var disasters = ["Earthquake", "Volcano", "Hurricane", "Tornado", "Tsunami", "Drought", "Landslide", "Debris Flow", "Fire", "Flood"];
 
 var countries = ["Japan", "China", "United States", "India", "Brazil", "Afganistan", "Egypt", "Haiti", "Mozambique", "Indonesia"];
 var queryURLGM;

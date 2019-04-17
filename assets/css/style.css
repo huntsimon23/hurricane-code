@@ -92,21 +92,18 @@ nav {
 }
 
 #trending{
-    /* height: 350px; */
-    /* max-height: 40%; */
-    overflow: scroll;
-    border: whitesmoke solid 1px;
-    
+    overflow-y: scroll;    
 }
 
 #articleLink {
     text-decoration: none;
+    color: black;
     font-size: 18px;
     }
 
 #articleLink:hover {
     text-decoration: none;
-    color: blue;
+    color: rgb(255, 111, 111);
 }
 
 .news{
@@ -114,19 +111,13 @@ nav {
     overflow: scroll;
 }
 
-#map {
-    height: auto;  /* The height is 400 pixels */
-    width: 100%;  /* The width is the width of the web page */
-    /* padding: 15px; */
-    overflow: scroll;
-   }
-
 .title-subtext {
     text-align: center;
     color: white;
 }
 
 #infographic {
+    position: relative;
     width: 100%;
     height: 200px;
     float: center;
@@ -159,11 +150,6 @@ nav {
     width: 50px
 }
 
-#map{
-    position: relative;
-    width: 600px;
-    height: 400px;
-}
 
 /* Responsive youtube player  */
 
@@ -193,3 +179,6 @@ nav {
     width: 100%;
     height: 100%;
   }
+#heart{
+    color: red;
+}

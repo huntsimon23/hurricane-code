@@ -1,5 +1,4 @@
 var NYTimesURL = "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO"
-var trendingURL =  "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO"
 var reliefWebURL = "https://api.reliefweb.int/v1/countries"
 var onOff = 1
 var crisisCountries = []
@@ -27,6 +26,7 @@ var crisisCountries = []
 //     console.log(onOff)
 // })
 
+
 // <------------------TRENDING-CODE------------------>
 
 
@@ -39,8 +39,15 @@ $.ajax({
     var footerHeight = $("#donate").height()
     var trendingHeight = windowHeight - footerHeight
 
+    var contentHeight = trendingHeight / 2
+
+    $("#map").css('height', contentHeight)
+    $("#player").css('height', contentHeight)
+
+
 
     $("#trending").css('height', trendingHeight)
+
 
     for(i = 0; i < 10; i++){
         // console.log(articleData[i])
@@ -65,32 +72,16 @@ $.ajax({
 
 // <------------------MAPS-CODE------------------>
 
-$(function(){
-
-    NYTimesURL = trendingURL
-    var mapHeight = $("#mapArea").height()
-    var mapWidth = $("#mapArea").width()
-
-
-    $("#map").css('height', mapHeight)
-    $("#map").css('width', mapWidth)
-
-    GetMap()
-})
-
-function GetMap()
-{
-    var map = new Microsoft.Maps.Map('#map', {
-        credentials: 'Atu6_COX5E94wLFqO9FiQbCtWY8GSJthzKLWIq4JKuMz53WWLWrmMVyjYJeeoagN',
-        center: new Microsoft.Maps.Location(51.50632, -0.12714),
-        mapTypeId: Microsoft.Maps.MapTypeId.roads,
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXZlbGF6IiwiYSI6ImNqdWw3cGQweDIzemMzeXVqY3MyamV0cWoifQ.NziRPnE3JtKjiMTfVxwXdQ';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/josevelaz/cjul7zojz07lv1fqq7tc12oxt',
+        center: [-71.020000, 42.362400],
         zoom: 1
     });
-    
-
-}
 
 
+// <------------------RELIEF-WEB------------------>
 $.ajax({
     url: reliefWebURL,
     method: "GET"
@@ -102,6 +93,7 @@ $.ajax({
         crisisCountries.push(countryData[i].fields.name)
     }
 
+    console.log(crisisCountries)
 })
 
 

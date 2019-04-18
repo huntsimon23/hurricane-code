@@ -189,3 +189,7 @@ nav {
     width: 20px;
     cursor: pointer;
 }
+
+.mapboxgl-popup {
+    max-width: 100px;
+}

@@ -182,3 +182,10 @@ nav {
 #heart{
     color: red;
 }
+
+.marker{
+    background-image: url('../images/marker1.png');
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}

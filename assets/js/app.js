@@ -2,6 +2,8 @@ var NYTimesURL = "https://api.nytimes.com/svc/topstories/v2/world.json?api-key=A
 var reliefWebURL = "https://api.reliefweb.int/v1/countries"
 var onOff = 1
 var crisisCountries = []
+var long;
+var lat;
 
 // <--------TO-DO-------->
 
@@ -87,13 +89,34 @@ $.ajax({
     method: "GET"
 }).then(function(response){
     var countryData = response.data
-    var crisisCountries = []
+    var crisisCountries = ""
+
 
     for(i = 0; i < 11; i++){
-        crisisCountries.push(countryData[i].fields.name)
-    }
+       crisisCountries  = countryData[i].fields.name
+       var geocode = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + crisisCountries + ".json?limit=2&types=country&access_token=pk.eyJ1Ijoiam9zZXZlbGF6IiwiYSI6ImNqdWw3cGQweDIzemMzeXVqY3MyamV0cWoifQ.NziRPnE3JtKjiMTfVxwXdQ"
 
-    console.log(crisisCountries)
+       $.ajax({
+           url: geocode,
+           method: "GET"
+       }).then(function(response){
+           lat = response.features[0].geometry.coordinates[0]
+           long = response.features[0].geometry.coordinates[1]
+
+           console.log(long)
+           console.log(lat)
+
+           var el = document.createElement('div');
+           el.className = 'marker';
+
+
+        new mapboxgl.Marker(el)
+            .setLngLat([lat, long])
+            .addTo(map);
+
+        })
+
+    }
 })
 
 

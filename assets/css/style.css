@@ -68,6 +68,7 @@ nav {
 #title-bkg {
     background-color: #444444;
     padding: 10px 0px 5px;
+    margin-bottom: 15px;
 }
 
 /* #trending-holder {
@@ -147,7 +148,7 @@ nav {
 
 .cardimage{
     height: 50px;
-    width: 50px
+    width: 50px;
 }
 
 
@@ -162,10 +163,46 @@ nav {
     background-color: black;
 }
 
+#about-logo {
+    background-color: #444444;
+    margin-bottom: 15px;
+}
+
 .card-img {
     height: 200px;
     width: 150px;
-}
+    border-radius: 25%;
+    }
+
+    #jose-img {
+        height: 215px;
+        width: 150px;
+    }
+
+    #imagesimon {
+        background-color: #444444;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagetess {
+        background-color: #444444;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagevinnie {
+        background-color: #444444;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagejose {
+        background-color: #444444;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+
 .iframe-container{
     position: relative;
     width: 100%;

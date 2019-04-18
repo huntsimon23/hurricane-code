@@ -21,29 +21,40 @@
     var emailVerified = "";
 
 // Click submit changes what is stored in firebase
-$("#modal-submit-btn").on("click", function(){
+$(document).on("click", "#modal-submit-btn", function(){
     // Prevent the page from refreshing
+    event.preventDefault();
     // Capture the value from the id's
 
-    # input-email
-    # input-password
-    # input-password-verify
+    var emailText = $("#input-email").val();
+    var passwordText = $("#input-password").val();
+    var pVerifyText = $("#input-password-verify").val();
+
+    // if(passwordText ==! pVerifyText) {
+    //   $("#modal-submit-btn").submit(function(e){
+    //     e.preventDefault();
+    //     console.log("they don't match");
+    // });
+    // }
 
     // Change what is saved in firebase
-    database.ref().set({
-
-
-    })
+    database.ref().push({
+    email: emailText,
+    password: passwordText,
+    emailVerified: pVerifyText,
+    });
 
     // Clear localStorage
     localStorage.clear();
 
     // Store email, password and verified password content into localStorage
+    localStorage.setItem("email", emailText);
+    localStorage.setItem("password", passwordText);
+    localStorage.setItem("passwordVerify", pVerifyText);
 
-
+    $(this.form).submit();
+    $('#loginModal').modal('hide');
     // 
-
-
 });
 
 
@@ -51,10 +62,8 @@ $("#modal-submit-btn").on("click", function(){
 
     // When changes occurs, print the email on the html designated div (TBD) 
     database.ref().on("value", function (snapshot) {
-
-
-    })
-
-
+    $("#email-display").text(snapshot);
+    console.log(snapshot);    
+    });
     // Run on click function - to save articles as favorite 
-
+    

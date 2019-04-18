@@ -171,15 +171,15 @@ $.ajax({
       // console.log(articleData[i])
 
       var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
-      var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
-      var appCardPic = $("<ion-icon>").attr('name', 'save').attr('id', 'appCardPic' + i)
+      var appArtBody = $("<div>").attr('class', 'card-body align-center').attr('id', 'appArtBody' + i)
+      var appCardPic = $("<i>").attr('class', 'far fa-heart').attr('name', 'save').attr('id', 'appCardPic' + i).attr('id', 'heart')
       var appArtTitle = $("<a>").attr('href', articleData[i].web_url).attr('id', 'articleLink').attr('class', 'card-title mt-2').text(articleData[i].snippet)
 
       // console.log(articleData[i])
 
       $("#trending").append(appArtCard)
       $("#appArtCard" + i).append(appArtBody)
-      // $("#appArtBody" + i).append(appCardPic)
+      $("#appArtBody" + i).append(appCardPic)
       $("#appArtBody" + i).append($("<hr>"))
       $("#appArtBody" + i).append(appArtTitle)
 

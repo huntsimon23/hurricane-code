@@ -13,11 +13,13 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Atu6_COX5E94wLFqO9FiQbCtWY8GSJthzKLWIq4JKuMz53WWLWrmMVyjYJeeoagN' async defer></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+  <!-- MapBox -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
   <title>Disaster Dashboard</title>
 </head>
 
@@ -31,15 +33,14 @@
         <a class="navbar-brand" href="#">
           <img src="./assets/images/ddlogo.png">
         </a>
-          <img src="./assets/images/on.png" id="onOffSwitch">
         <!-- modal for user login -->
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="loginbutton" data-toggle="modal" data-target="#loginModal">
           Login
         </button>
+
         <!--Display for login email-->
           <span class="email-display"></span>
-
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -148,7 +149,6 @@
       <div class="col-6">
         <div class="row">
           <div class="col " id="mapArea">
-            <!-- <h1>Map</h1> -->
             <div class="mr-3 mt-3"id="map">
             </div>
           </div>
@@ -159,7 +159,7 @@
           <div class="col">
             <!-- <h1>YouTube</h1> -->
 
-            <div id="player" class="iframe-container">
+            <div id="player" class="iframe-container mt-2">
               <div id="video-placeholder"></div>
 
               <script src="https://www.youtube.com/iframe_api"></script>

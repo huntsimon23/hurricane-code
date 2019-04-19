@@ -29,24 +29,19 @@
 </head>
 
 <body>
-
   <div class="container">
     <!--Navbar-->
     <div class="row">
-      <div class="col-3">
+      <div class="col-5">
         <!--Logo-->
         <a class="navbar-brand" href="./index.html">
-          <img src="./assets/images/ddlogo.png">
+          <img src="./assets/images/DDlogoFinalSmall.png">
         </a>
-        <!-- modal for user login -->
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="loginbutton" data-toggle="modal" data-target="#loginModal">
-          Login
-        </button>
+        <!-- Buttons triggering modals -->
+        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="new-acct" data-toggle="modal" data-target="#loginModal">New Account</button>
+        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="loginbutton" data-toggle="modal" data-target="#loginModal">Login</button>
       </div>
-        <!--Display for login email-->
-      <div class="col-2"><p>Current User:<span id="email-display">none</span></p>
-      </div>
+        
         <!-- Modal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
@@ -59,28 +54,27 @@
                 </button>
               </div>
                 <div class="modal-body">
-                  <!-- <form>
+                  <form class="needs-validation" novalidate>
                     <div class="form-group" id="modal-input">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp"
-                        placeholder="Enter email" required="true">
-                      <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone
-                        else.</small>
+                      <label for="exampleInputEmail1 validationCustom01">Email address</label>
+                      <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Enter email" required="true">
+                      <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone else.</small>
+                      <div class="valid-feedback">awesome!</div>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
+                      <label for="exampleInputPassword1 ">Password</label>
                       <input type="password" class="form-control" id="input-password" placeholder="Password" required="true">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="exampleInputPassword1">Re-enter Password</label>
                       <input type="password" class="form-control" id="input-password-verify" placeholder="Password" required="true">
-                    </div>
-                  </form> -->
+                    </div> -->
+                  </form>
                   <!-- The surrounding HTML is left untouched by FirebaseUI.
      Your app may use that space for branding, controls and other customizations.-->
-                <h1>Welcome to My Awesome App</h1>
+                <!-- <h2>My Disaster Dashboard</h2>
                 <div id="firebaseui-auth-container"></div>
-                <div id="loader">Loading...</div>
+                <div id="loader">Loading...</div> -->
                 </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" id="modal-submit-btn">Submit</button>
@@ -131,7 +125,7 @@
           <!--search input-->
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="user-input" type="search" placeholder="Disaster or City Name"
-              aria-label="search" size="25">
+              aria-label="search" size="20">
             <button class="btn btn-outline-danger my-2 my-sm-0" id="submit-button" type="submit">Search</button>
           </form>
         </nav>
@@ -142,16 +136,18 @@
     <div class="row">
       <div class="col" id="title-bkg">
         <h2 id="title-text"><strong>Disaster Dashboard</strong></h2>
-        <h4 class="title-subtext"><strong>Up to date, accurate information about disasters worldwide and their humanitarian impact</strong></h4>
+        <h4 class="title-subtext"><strong>Trending content about disasters worldwide and their humanitarian impact</strong></h4>
       </div>
     </div>
     <!--sidebar-->
     <div class="row flex" id="content-row">
       <div class="col-6" id="trending-holder">
-      <div class="row">
-          <div class="col-3"><button type="button" class="btn btn-link" id="stories">My Stories</button></div>
-          <div class="col-6"><h2 id="trending-text">Trending News</h2></div>
-          <div class="col-3"><button type="button" class="btn btn-link" id="headlines">Latest Headlines</button></div>
+        <!--Display for login email-->
+        <div class="row" id="email-holder1"><p class="login-show text-center" id="current-user" hidden>Current User: <span id="email-display"></span></p></div> 
+        <div class="row">
+        <div class="col-3"><button type="button" class="btn btn-link login-show" id="stories" hidden>My Stories</button></div>
+        <div class="col-6"><h2 id="trending-text">Related News</h2></div>
+        <div class="col-3"><button type="button" class="btn btn-link login-show" id="logout" hidden>Log Out</button></div>
       </div>    
         <div id="trending">
         </div>
@@ -180,19 +176,17 @@
           </div>
           <div class="row">
           <div class="col " id="mapArea">
-              <h2 class="text-center">Current Disasters</h2>
+              <h2 class="text-center">Disaster Hotspots</h2>
             <div class="my-3 mx-3"id="map">
             </div>
           </div>
         </div>
-
-        
-      </div>
+      </div> 
     </div>
-
     <div class="row" id="donate-bkg">
-      <h2 id="getinvolved" class="text-center">Get Involved</h2>
-    </div>
+        <h2 id="getinvolved" class="text-center">Get Involved</h2>
+      </div>
+    
     <!-- donate row -->
     <div class="row" id="donate">
       <div class="col">

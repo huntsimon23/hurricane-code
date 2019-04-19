@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 var disasters = ["Earthquake", "Volcano", "Hurricane", "Tornado", "Tsunami", "Drought", "Landslide", "Debris Flow", "Fire", "Flood"];
 
-var countries = ["Japan", "China", "United States", "India", "Brazil", "Afganistan", "Egypt", "Haiti", "Mozambique", "Indonesia"];
+var countries = ["Japan", "China", "United States", "India", "Brazil", "Afganistan", "France", "Haiti", "Mozambique", "Indonesia"];
 var queryURLGM;
 var queryURLRW;
 var queryURLYT;

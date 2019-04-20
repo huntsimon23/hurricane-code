@@ -113,18 +113,15 @@ var myStories = database.ref(userID).once('value', function(snapshot) {
     var childKey = childSnapshot.key;
     var childData = childSnapshot.val();
     console.log(childData.snippet);
-    
-// for (i=0; i < childData.length; i++) {
-  var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
-  var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
-  var appCardPic2 = $("<h5>").text(childData.snippet).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
-  var appArtTitle = $("<a href='" + childData.url + "'>").attr('class', 'card-title mt-2').text(childData.url);
+  var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto login-show').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
+  var appArtBody = $("<div>").attr('class', 'card-body login-show').attr('id', 'appArtBody' + i)
+  var appCardPic2 = $("<h5>").text(childData.snippet).attr('class', 'card-img-top login-show').attr('id', 'appCardPic' + i)
+  var appArtTitle = $("<a href='" + childData.url + "'>").attr('class', 'card-title mt-2 login-show').text(childData.url);
 
   $("#trending").append(appArtCard)
   $("#appArtCard" + i).append(appArtBody)
   $("#appArtBody" + i).append(appCardPic2)
   $("#appArtBody" + i).append(appArtTitle)
-  // $("#appArtBody" + i).append($("<hr>"))
 
   loginShow();
   console.log("success!")

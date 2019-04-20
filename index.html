@@ -38,17 +38,17 @@
           <img src="./assets/images/DDlogoFinalSmall.png">
         </a>
         <!-- Buttons triggering modals -->
-        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="new-acct" data-toggle="modal" data-target="#loginModal">New Account</button>
-        <button type="button" class="btn btn-outline-danger my-2 my-sm-0" id="loginbutton" data-toggle="modal" data-target="#loginModal">Login</button>
+        <button type="button" class="btn btn-outline-danger my-2 my-sm-0 login-hide" id="new-acct" data-toggle="modal" data-target="#newAcctModal">New Account</button>
+        <button type="button" class="btn btn-outline-danger my-2 my-sm-0 login-hide" id="loginbutton" data-toggle="modal" data-target="#loginModal">Login</button>
       </div>
         
-        <!-- Modal -->
+        <!-- #loginModal -->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Login to My Disaster Dashboard</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -57,13 +57,13 @@
                   <form class="needs-validation" novalidate>
                     <div class="form-group" id="modal-input">
                       <label for="exampleInputEmail1 validationCustom01">Email address</label>
-                      <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" placeholder="Enter email" required="true">
+                      <input type="email" class="form-control input-email" aria-describedby="emailHelp" placeholder="Enter email" required="true">
                       <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone else.</small>
                       <div class="valid-feedback">awesome!</div>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1 ">Password</label>
-                      <input type="password" class="form-control" id="input-password" placeholder="Password" required="true">
+                      <input type="password" class="form-control input-password" placeholder="Password" required="true">
                     </div>
                     <!-- <div class="form-group">
                       <label for="exampleInputPassword1">Re-enter Password</label>
@@ -77,11 +77,53 @@
                 <div id="loader">Loading...</div> -->
                 </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" id="modal-submit-btn">Submit</button>
+                <button type="submit" class="btn btn-primary" id="login-submit-btn">Submit</button>
               </div>
             </div>
             </div>
           </div>
+
+           <!-- #newAcctModal -->
+        <div class="modal fade" id="newAcctModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create a new Disaster Dashboard Account</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+              <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                  <div class="form-group" id="modal-input">
+                    <label for="exampleInputEmail1 validationCustom01">Email address</label>
+                    <input type="email" class="form-control input-email" aria-describedby="emailHelp" placeholder="Enter email" required="true">
+                    <small id="emailHelp" class="form-text text-muted">We will not share your email with anyone else.</small>
+                    <div class="valid-feedback">awesome!</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1 ">Password</label>
+                    <input type="password" class="form-control input-password" placeholder="Password" required="true">
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="exampleInputPassword1">Re-enter Password</label>
+                    <input type="password" class="form-control" id="input-password-verify" placeholder="Password" required="true">
+                  </div> -->
+                </form>
+                <!-- The surrounding HTML is left untouched by FirebaseUI.
+   Your app may use that space for branding, controls and other customizations.-->
+              <!-- <h2>My Disaster Dashboard</h2>
+              <div id="firebaseui-auth-container"></div>
+              <div id="loader">Loading...</div> -->
+              </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="newacct-submit-btn">Submit</button>
+            </div>
+          </div>
+          </div>
+        </div>
+
         <div class="col-7">  
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <!--Type of disaster dropdown menu-->
@@ -147,7 +189,7 @@
         <div class="row">
         <div class="col-3"><button type="button" class="btn btn-link login-show" id="stories" hidden>My Stories</button></div>
         <div class="col-6"><h2 id="trending-text">Related News</h2></div>
-        <div class="col-3"><button type="button" class="btn btn-link login-show" id="logout" hidden>Log Out</button></div>
+        <div class="col-3"><button type="button" class="btn btn-link login-show" id="logout-btn" hidden>Log Out</button></div>
       </div>    
         <div id="trending">
         </div>

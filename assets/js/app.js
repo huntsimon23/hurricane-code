@@ -52,11 +52,12 @@ $.ajax({
 
 
     for(i = 0; i < 10; i++){
-        console.log(articleData[i])
+        // console.log(articleData[i])
 
         var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
         var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
-        var appCardPic = $("<img>").attr('src', articleData[i].multimedia[4].url).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
+        var appCardPic = $("<i>").attr('class', 'far fa-heart login-show heart').attr('name', 'save').attr('id', 'appCardPic' + i).attr("hidden", true).attr("url", articleData[i].url).attr("snippet", articleData[i].title);
+        var appCardPic2 = $("<img>").attr('src', articleData[i].multimedia[4].url).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
         var appArtTitle = $("<a href='" + articleData[i].url + "'>").attr('class', 'card-title mt-2').text(articleData[i].title)
 
         // console.log(articleData[i])
@@ -64,10 +65,11 @@ $.ajax({
         $("#trending").append(appArtCard)
         $("#appArtCard" + i).append(appArtBody)
         $("#appArtBody" + i).append(appCardPic)
+        $("#appArtBody" + i).append(appCardPic2)
         $("#appArtBody" + i).append($("<hr>"))
         $("#appArtBody" + i).append(appArtTitle)
 
-
+        loginShow();
     }
 
 })
@@ -103,8 +105,8 @@ $.ajax({
            lat = response.features[0].geometry.coordinates[0]
            long = response.features[0].geometry.coordinates[1]
 
-           console.log(long)
-           console.log(lat)
+        //    console.log(long)
+        //    console.log(lat)
 
            var el = document.createElement('div');
            el.className = 'marker';

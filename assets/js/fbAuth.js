@@ -1,5 +1,4 @@
- // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyCZShavrqBv1mczIBpUkG5Yj0oNeyulzec",
     authDomain: "huntsimon23-disasterdashboard.firebaseapp.com",
     databaseURL: "https://huntsimon23-disasterdashboard.firebaseio.com",
@@ -9,103 +8,126 @@
   };
   firebase.initializeApp(config);
 
-  // Create a variable to reference the database
-  var database = firebase.database();
+var database = firebase.database();
 
-    // Initial Variables (SET the first set IN FIREBASE FIRST)
-    // Note remember to create these same variables in Firebase!
-    var email = "";
-    var password = "";
-    var emailVerified = "";
+function loginShow(){
+  var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in.
+    $(".login-show").attr("hidden", false);
+    $(".login-hide").attr("hidden", true);
+  } else {
+    // No user is signed in.
+    $(".login-show").attr("hidden", true);
+    $(".login-hide").attr("hidden", false);
+  }
+}
 
-// Click submit changes what is stored in firebase
-$(document).on("click", "#modal-submit-btn", function(){
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
+$(document).on("click", "#newacct-submit-btn", function(){
+    var emailText = $(".input-email").val().trim();
+    var passwordText = $(".input-password").val();
 
-    var emailText = $("#input-email").val();
-    var passwordText = $("#input-password").val();
+    database.ref().push({
+    email: emailText,
+    password: passwordText,
+    });
 
-    // Change what is saved in firebase
-    // database.ref().push({
-    // email: emailText,
-    // password: passwordText,
-    // });
-
-    // Clear localStorage
     localStorage.clear();
-
-    // Store email, password and verified password content into localStorage
     localStorage.setItem("email", emailText);
     localStorage.setItem("password", passwordText);
 
     firebase.auth().createUserWithEmailAndPassword(emailText, passwordText).catch(function(error) {
-      // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorCode, errorMessage);
     });
-    $("#email-display").text(emailText);
     $(this.form).submit();
-    $("#loginModal").modal('hide');
-
+    $("#newAcctModal").modal('hide');
+    loginShow();
 });
 
-    // When changes occurs, print the email on the html designated div (TBD) 
-    // database.ref().on("value", function (snapshot) {
-    // $("#email-display").text(snapshot);
-    // console.log(snapshot);    
-    // });
+$(document).on("click", "#login-submit-btn", function(){
+  var emailText = $(".input-email").val();
+  console.log(emailText);
+  var passwordText = $(".input-password").val();
 
-// Initialize the FirebaseUI Widget using Firebase.
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
-// ui.start('#firebaseui-auth-container', {
-//   signInOptions: [
-//         firebase.auth.EmailAuthProvider.PROVIDER_ID
-//       ],
-//     });
+  database.ref().push({
+  email: emailText,
+  password: passwordText,
+  });
 
-// var uiConfig = {
-//   callbacks: {
-//     signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-//       // User successfully signed in.
-//       // Return type determines whether we continue the redirect automatically
-//       // or whether we leave that to developer to handle.
-//       return false;
-//     },
+  localStorage.clear();
+  localStorage.setItem("email", emailText);
+  localStorage.setItem("password", passwordText);
+
+  firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
     
-//     uiShown: function() {
-//       // The widget is rendered.
-//       // Hide the loader.
-//       document.getElementById('loader').style.display = 'none';
-//     }
-//   },
-//   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-//   signInFlow: 'popup',
-//   signInSuccessUrl: '',
-//   signInOptions: [
-//     // Leave the lines as is for the providers you want to offer your users.
-//     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-//   ],
-//   // autoUpgradeAnonymousUsers: true,
-// };
+    console.log(errorCode, errorMessage);
+  });
+  $(this.form).submit();
+  $("#loginModal").modal('hide');
+  loginShow();
+});
 
-// // The start method will wait until the DOM is loaded.
-// ui.start('#firebaseui-auth-container', uiConfig);
+$(document).on("click", "#logout-btn", function(){
+firebase.auth().signOut().then(function() {
+  //Sign out successful.
+}).catch(function(error) {
+  // An error happened.
+});
+loginShow();
+});
 
-    // Run on click function - to save articles as favorite 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    loginShow();
+    $("#email-display").text(user.email);
+  } else {
+    // No user is signed in.
+  }
+});
+
+$(document).on("click", ".heart", function(){
+  $(this).removeClass("far fa-heart").addClass("fas fa-heart");
+  var storyUrl = $(this).attr("url");
+  var storySnippet = $(this).attr("snippet");
+  var storyData = {
+    url: storyUrl,
+    snippet: storySnippet,
+  };
+  var newStoryKey = database.ref().child('user-stories').push().key;
+  var updates = {};
+  var user = firebase.auth().currentUser.uid;  
+  updates[user + '/' + newStoryKey] = storyData;
+  database.ref().update(updates);
+});
+
+$(document).on("click", "#stories", function(){
+var userID = firebase.auth().currentUser.uid;  
+var myStories = database.ref(userID + '/').orderByKey();
+var windowHeight = $(window).height();
+    var footerHeight = $("#donate").height();
+    var trendingHeight = windowHeight - footerHeight;
+    var contentHeight = trendingHeight / 2;
+    $("#map").css('height', contentHeight);
+    $("#player").css('height', contentHeight);
+    $("#trending").css('height', trendingHeight);
+
+for (i=0; i < myStories.length; i++) {
+  var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
+  var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
+  var appCardPic2 = $("<h5>").text(myStories[i].snippet).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
+  var appArtTitle = $("<a href='" + myStories[i].url + "'>").attr('class', 'card-title mt-2').text(myStories[i].url);
+
+  $("#trending").append(appArtCard)
+  $("#appArtCard" + i).append(appArtBody)
+  $("#appArtBody" + i).append(appCardPic2)
+  $("#appArtBody" + i).append($("<hr>"))
+  $("#appArtBody" + i).append(appArtTitle)
+
+  loginShow();
+}
+});

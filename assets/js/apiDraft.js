@@ -150,7 +150,6 @@ $("#submit-button").on("click", function(event){
 var NYTimesURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=AMQMxuYu9k5pwYEEK3tFSbdG6s99PQkO&q=" + userInput + "+" + dropdown 
 
 
-
 $.ajax({
   url: NYTimesURL,
   method: "GET"
@@ -172,7 +171,7 @@ $.ajax({
 
       var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
       var appArtBody = $("<div>").attr('class', 'card-body align-center').attr('id', 'appArtBody' + i)
-      var appCardPic = $("<i>").attr('class', 'far fa-heart').attr('name', 'save').attr('id', 'appCardPic' + i).attr('id', 'heart')
+      var appCardPic = $("<i>").attr('class', 'far fa-heart heart').attr('name', 'save').attr('id', 'appCardPic' + i).attr("url", articleData[i].web_url).attr("snippet", articleData[i].snippet);
       var appArtTitle = $("<a>").attr('href', articleData[i].web_url).attr('id', 'articleLink').attr('class', 'card-title mt-2').text(articleData[i].snippet)
 
       // console.log(articleData[i])
@@ -183,21 +182,11 @@ $.ajax({
       $("#appArtBody" + i).append($("<hr>"))
       $("#appArtBody" + i).append(appArtTitle)
 
+    loginShow();    
 
   }
 
 })
 
 })
-  
-// Youtube Div - Iframe resizing (responsive) - DONE,
-//  5 videos in sequence,
-//  advanced search filtering 
-
-
-
-
-
-
-
 })

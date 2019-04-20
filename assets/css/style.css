@@ -1,51 +1,3 @@
-/* body{
-    overflow: hidden;
-} */
-
-.nav-link {
-    margin: 3px;
-}
-
-.dropdown-toggle{
-    margin: 3px;
-}
-
-#search-param {
-    margin: 3px;
-}
-
-.btn-outline-success {
-    margin: 3px;
-}
-
-/* login button 
-#loginbutton {
-    border: 3px;
-    
-    border-color: red;
-    
-}
-*/
-
-/* div {
-    border-style: dashed;
-    border-color: red;
-    border-width: 1px;
-} */
-
-.donate-image-rc {
-    height: auto;
-    /* width: 100%; */
-    margin: 3px;
-    padding: 15px;
-}
-
-.donate-image-sp {
-    height: 100px;
-    width:  241px;
-    margin: 3px;
-    padding: 15px;
-}
 
 body {
     background-color:#c5c5c5;
@@ -56,13 +8,50 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Navbar & Header Styles  */
+
+
+#email-holder1 {
+    margin: auto;
+    position: relative;
+    top: 10px;
+}
+
+#email-holder2 {
+    margin: auto auto 5px auto;
+}
+
+#current-user {
+    margin-bottom: 5px;
+}
+
+#email-display {
+    margin-bottom: 5px;
+}
+
+
+.dropdown-toggle{
+    margin: 3px;
+}
+
 nav {
     float: right;
 }
 
+/* .nav-link {
+    margin: 3px;
+} */
+
 #title-text {
     color: white;
+    font-weight: bold;
     text-align: center;
+}
+
+.title-subtext {
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 #title-bkg {
@@ -71,79 +60,21 @@ nav {
     margin-bottom: 15px;
 }
 
-/* #trending-holder {
-    /* border-right: 2px dotted gray; 
-} */ 
-
-/* footer {
-    border-top: 5px solid #444444;
+/* div {
+    border-style: dashed;
+    border-color: red;
+    border-width: 1px;
 } */
 
-/* footer>.row>.col-4 {
-    padding: 10px;
-} */
-
-
-#youtube {
-    float: center;
-    /* position: absolute;
-    top: 15%;
-    height: 300px;
-    width: 500px; */
-}
-
-#trending{
-    overflow-y: scroll;    
-}
-
-#articleLink {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    }
-
-#articleLink:hover {
-    text-decoration: none;
-    color: rgb(255, 111, 111);
-}
-
-.news{
-    height: 40%;
-    overflow: scroll;
-}
-
-.title-subtext {
-    text-align: center;
-    color: white;
-}
-
-#infographic {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    float: center;
-    padding-right: 15px;
-}
-
-#getinvolved {
-    text-align: center;
-    margin-left:calc(100% - 60%);
-    color: white;
-    padding: 3px;
-}
+/* NYT Styles */
 
 #trending-text {
     text-align: center;
     margin: 5px;
 }
 
-#donate-bkg {
-    background-color: #444444;
-}
-
-#footer-text {
-    text-align: center;
-    padding: 10px;
+#trending{
+    overflow-y: scroll;    
 }
 
 .cardimage{
@@ -151,57 +82,30 @@ nav {
     width: 50px;
 }
 
-
-/* Responsive youtube player  */
-
-/* h1 {
-    text-align: center;
-    color: white;
-} */
-
-#about-title {
-    background-color: black;
+#articleLink {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
 }
 
-#about-logo {
-    padding-top: 10px;
-    margin-bottom: 15px;
+#articleLink:hover {
+    text-decoration: blue;
+    color: rgb(255, 111, 111);
 }
 
-.card-img {
-    height: 200px;
-    width: 150px;
-    border-radius: 25%;
-    }
+#heart{
+    color: red;
+}
 
-    #jose-img {
-        height: 215px;
-        width: 150px;
-    }
+/* Youtube Styling */
 
-    #imagesimon {
-        background-color: #444444;
-        padding-left: 15px;
-        padding-top: 5px;
-    }
-
-    #imagetess {
-        background-color: #444444;
-        padding-left: 15px;
-        padding-top: 5px;
-    }
-
-    #imagevinnie {
-        background-color: #444444;
-        padding-left: 15px;
-        padding-top: 5px;
-    }
-
-    #imagejose {
-        background-color: #444444;
-        padding-left: 15px;
-        padding-top: 10px;
-    }
+#infographic {
+    position: relative;
+    width: 100%;
+    height: auto;
+    float: center;
+    padding-right: 15px;
+}
 
 .iframe-container{
     position: relative;
@@ -216,8 +120,11 @@ nav {
     width: 100%;
     height: 100%;
   }
-#heart{
-    color: red;
+
+/* Map Styling */
+
+.mapboxgl-popup {
+    max-width: 100px;
 }
 
 .marker{
@@ -227,6 +134,83 @@ nav {
     cursor: pointer;
 }
 
-.mapboxgl-popup {
-    max-width: 100px;
+/* Footer Styles */
+
+#getinvolved {
+    text-align: center;
+    margin-left:calc(100% - 60%);
+    color: white;
+    padding: 3px;
 }
+
+.donate-image-rc {
+    height: auto;
+    margin: 3px;
+    padding: 15px;
+}
+
+.donate-image-sp {
+    height: 100px;
+    width:  241px;
+    margin: 3px;
+    padding: 15px;
+}
+
+#donate-bkg {
+    background-color: #444444;
+}
+
+#footer-text {
+    text-align: center;
+    padding: 10px;
+}
+
+/* About Page Styles  */
+#about-title {
+    background-color: #444444;
+}
+
+#about-logo {
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+.card-img {
+    height: 200px;
+    width: 150px;
+    border-radius: 25%;
+    }
+
+    #jose-img {
+        height: 200px;
+        width: 150px;
+    }
+
+    #imagesimon {
+        /* background-color: #444444; */
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagetess {
+        /* background-color: #444444; */
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagevinnie {
+        /* background-color: #444444; */
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    #imagejose {
+        /* background-color: #444444; */
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+
+
+
+
+

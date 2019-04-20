@@ -46,8 +46,6 @@ $.ajax({
     $("#map").css('height', contentHeight)
     $("#player").css('height', contentHeight)
 
-
-
     $("#trending").css('height', trendingHeight)
 
 

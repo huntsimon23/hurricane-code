@@ -24,7 +24,8 @@ function loginShow(){
 }
 
 $(document).on("click", "#newacct-submit-btn", function(){
-    var emailText = $(".input-email").val().trim();
+    var emailText = $(".input-email").val();
+    console.log(emailText);
     var passwordText = $(".input-password").val();
 
     database.ref().push({
@@ -63,7 +64,6 @@ $(document).on("click", "#login-submit-btn", function(){
   firebase.auth().signInWithEmailAndPassword(emailText, passwordText).catch(function(error) {
     var errorCode = error.code;
     var errorMessage = error.message;
-    
     console.log(errorCode, errorMessage);
   });
   $(this.form).submit();
@@ -105,29 +105,31 @@ $(document).on("click", ".heart", function(){
   database.ref().update(updates);
 });
 
-$(document).on("click", "#stories", function(){
+$(document).on("click", "#stories", function() {
+$("#trending").empty(); 
 var userID = firebase.auth().currentUser.uid;  
-var myStories = database.ref(userID + '/').orderByKey();
-var windowHeight = $(window).height();
-    var footerHeight = $("#donate").height();
-    var trendingHeight = windowHeight - footerHeight;
-    var contentHeight = trendingHeight / 2;
-    $("#map").css('height', contentHeight);
-    $("#player").css('height', contentHeight);
-    $("#trending").css('height', trendingHeight);
-
-for (i=0; i < myStories.length; i++) {
+var myStories = database.ref(userID).once('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    var childData = childSnapshot.val();
+    console.log(childData.snippet);
+    
+// for (i=0; i < childData.length; i++) {
   var appArtCard = $("<div>").attr('class', 'card my-3 mx-auto').attr('style', 'width: 25rem').attr('id', 'appArtCard' + i)
   var appArtBody = $("<div>").attr('class', 'card-body').attr('id', 'appArtBody' + i)
-  var appCardPic2 = $("<h5>").text(myStories[i].snippet).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
-  var appArtTitle = $("<a href='" + myStories[i].url + "'>").attr('class', 'card-title mt-2').text(myStories[i].url);
+  var appCardPic2 = $("<h5>").text(childData.snippet).attr('class', 'card-img-top').attr('id', 'appCardPic' + i)
+  var appArtTitle = $("<a href='" + childData.url + "'>").attr('class', 'card-title mt-2').text(childData.url);
 
   $("#trending").append(appArtCard)
   $("#appArtCard" + i).append(appArtBody)
   $("#appArtBody" + i).append(appCardPic2)
-  $("#appArtBody" + i).append($("<hr>"))
   $("#appArtBody" + i).append(appArtTitle)
+  // $("#appArtBody" + i).append($("<hr>"))
 
   loginShow();
-}
+  console.log("success!")
+  });
+});
+
+
 });
